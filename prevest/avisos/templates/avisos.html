@@ -1,19 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Avisos{% endblock %}
+
+{% block content %}
 <h2>Avisos</h2>
+{% if user.is_authenticated and user.coordenador %}
+    <a href="{% url 'post_aviso' %}">
+        <button type="button">Publicar Aviso</button>
+    </a>
+{% endif %}
+
 {% if avisos %}
     {% for aviso in avisos %}
         <div>
             <h3>{{ aviso.title }}</h3>
             <p>{{ aviso.content }}</p>
             <small>Postado por {{ aviso.author.username }} em {{ aviso.created_at|date:"d/m/Y H:i" }}</small>
+            
+            {% if user.is_authenticated and user.coordenador %}
+                <form method="POST" action="{% url 'delete_aviso' aviso.id %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit">Excluir</button>
+                </form>
+            {% endif %}
         </div>
         <hr>
     {% endfor %}
 {% else %}
     <p>Não há avisos disponíveis.</p>
 {% endif %}
+{% endblock %}
 
-<!-- Exibir botão apenas se o usuário for coordenador -->
-{% if user.is_authenticated and user.is_coordinator %}
+{% if user.is_authenticated and user.coordenador %}
     <a href="{% url 'post_aviso' %}">
         <button type="button">Publicar Aviso</button>
     </a>

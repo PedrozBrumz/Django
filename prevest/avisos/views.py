@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import CustomUserCreationForm
@@ -22,11 +22,11 @@ def register(request):
     return render(request, 'register.html', {'form': form})
 
 def home(request):
-    avisos = Aviso.objects.all() if request.user.is_authenticated and request.user.is_teacher else []
+    avisos = Aviso.objects.all() if request.user.is_authenticated and request.user.professor else []
     return render(request, 'home.html', {'avisos': avisos})
 
 @login_required
-@user_passes_test(lambda u: u.is_coordinator)
+@user_passes_test(lambda u: u.coordenador)
 def post_aviso(request):
     if request.method == 'POST':
         title = request.POST.get('title')
@@ -41,3 +41,10 @@ def post_aviso(request):
 def avisos(request):
     avisos = Aviso.objects.all().order_by('-created_at')
     return render(request, 'avisos.html', {'avisos': avisos})
+
+@login_required
+@user_passes_test(lambda u: u.coordenador)
+def delete_aviso(request, aviso_id):
+    aviso = get_object_or_404(Aviso, id=aviso_id)
+    aviso.delete()
+    return redirect('avisos')  # Redireciona para a página inicial após a exclusão

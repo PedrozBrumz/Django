@@ -7,8 +7,8 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 class CustomUser(AbstractUser):
-    is_coordinator = models.BooleanField(default=False)
-    is_teacher = models.BooleanField(default=False)
+    coordenador = models.BooleanField(default=False)
+    professor = models.BooleanField(default=False)
 
 class Aviso(models.Model):
     title = models.CharField(max_length=255)
