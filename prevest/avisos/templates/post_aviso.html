@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+
+{% block title %}Postar Aviso{% endblock %}
+
+{% block content %}
 <h2>Publique um anúncio</h2>
 <form method="post">
     {% csrf_token %}
@@ -5,3 +10,4 @@
     <textarea name="content" placeholder="Conteúdo" required></textarea><br>
     <button type="submit">Postar</button>
 </form>
+{% endblock %}

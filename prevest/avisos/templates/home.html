@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
+{% extends 'base.html' %}
+
+{% block title %}Home - Avisos{% endblock %}
+
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem-vindo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Bem-vindo ao Sistema de Avisos!</h1>
-    <p>Escolha uma opção:</p>
-    <a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Registro</a>
+    <h1>Sistema de Avisos Internos do Pré-Vestibular Comunitário</h1>
+    <section class="programacao">
+        <h2>Programação</h2>
+        <div class="cartoes">
+            <div class="cartao">
+                <h3>Inscrições para estudantes no Pré-Vestibular Comunitário - 2024</h3>
+                <p>As inscrições para as novas turmas de 2024 no Pré-Vestibular Comunitário da PUC-Rio estão abertas! Leia o edital na íntegra e se inscreva pelo link</p>
+                <a href="https://bit.ly/4biy9UA" target="_blank">Inscreva-se</a>
+            </div>
+            <div class="cartao">
+                <h3>Voluntários para o Pré-Vestibular Comunitário</h3>
+                <p>As inscrições para voluntariado no Pré-Vestibular Comunitário ficam abertas ao longo do ano. Basta preencher o formulário ao lado e em seguida entraremos em contato. Link:</p>
+                <a href="https://forms.gle/uvisbpKsWKMP61fD6" target="_blank">Formulário de Inscrição</a>
+            </div>
+            <div class="cartao">
+                <h3>Missas da Pastoral Universitária Anchieta</h3>
+                <p>Toda quarta-feira às 12h na Igreja do Sagrado Coração de Jesus.</p>
+            </div>
+        </div>
+    </section>
 </body>
+
+{% endblock %}
+
 </html>

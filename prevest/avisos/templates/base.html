@@ -1,31 +1,51 @@
 <!DOCTYPE html>
-<html lang="EN">
+<html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Meu Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-
-    <!-- Barra de navegação -->
-    <header>
-        <nav>
-            <ul>
-                {% if user.is_authenticated %}
-                    <li>Bem-vindo, {{ user.username }}!</li>
-                    <li><form method="POST" action="{% url 'logout' %}">
-                      {% csrf_token %}
-                      <button type="submit">Sair</button>
-                  </form></li>
-                {% endif %}
-            </ul>
+    <!-- Barra superior -->
+    <header class="top-bar">
+        <div class="logo">
+            <img src="{% static 'images/puc-rio.png' %}" alt="Logo da PUC-RJ">
+            <img src="{% static 'images/logo2.png' %}" alt="Logo do Pré-Vestibular">
+        </div>
+        <nav class="nav-links">
+            <a href="{% url 'home' %}">Home</a>
+            {% if user.is_authenticated %}
+                <span>{{ user.username }}</span>
+                <a href="{% url 'logout' %}">Sair</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Registrar</a>
+            {% endif %}
         </nav>
     </header>
 
-    <!-- Conteúdo principal -->
+    <!-- Conteúdo da página -->
     <main>
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </main>
 
+    <section class="contato">
+        <h2>Contato</h2>
+        <p><strong>Pastoral Universitária Anchieta</strong></p>
+        <p>Rua Marquês de São Vicente 225, Gávea, Rio de Janeiro, RJ.<br>CEP: 22451-900</p>
+        <p><strong>Telefone:</strong> (21) 3527-1047 (Ligações e WhatsApp)</p>
+        <p><strong>E-mail:</strong> <a href="mailto:comunicacaopastoral@puc-rio.br">comunicacaopastoral@puc-rio.br</a></p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/pastoraluniversitariapucrio" target="_blank">@pastoraluniversitariapucrio</a></p>
+    </section>
+ 
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 PUC-RJ. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
+
 </html>

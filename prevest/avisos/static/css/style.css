@@ -1,0 +1,157 @@
+/* Reset básico */
+
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rethink Sans';
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #d9d9d9, #002967); /* Cores da barra */
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+button:hover, a:hover {
+    background-color: #2980b9;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.footer {
+    text-align: center;
+    background-color: #002967;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.external-links {
+    display: flex; /* Usando flexbox para alinhar os ícones */
+    justify-content: center; /* Centraliza os ícones */
+    gap: 20px; /* Espaçamento entre os ícones */
+    margin-top: 40px; /* Espaço acima dos ícones */
+}
+
+.external-links a {
+    color: #333; /* Cor dos ícones */
+    font-size: 40px; /* Tamanho dos ícones */
+    transition: color 0.3s, transform 0.3s; /* Transição suave */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.external-links a:hover {
+    color: #1d72b8; /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o ícone levemente */
+}
+
+.contato {
+    background-color: #f8f8f8; /* Fundo suave para a seção */
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px; /* Borda arredondada */
+    margin-top: 40px; /* Distância do conteúdo anterior */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.contato h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.contato p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.contato a {
+    color: #1d72b8; /* Cor azul para links */
+    text-decoration: none;
+}
+
+.contato a:hover {
+    text-decoration: underline;
+}
+
+.programacao {
+    margin: 40px 0;
+    padding: 0 20px;
+}
+
+.programacao h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Contêiner para os cartões */
+.cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Grid responsivo */
+    gap: 30px; /* Espaço entre os cartões */
+    justify-content: center; /* Centraliza o grid na tela */
+    padding: 0 20px; /* Adiciona um pouco de padding nas laterais */
+    max-width: 1200px; /* Define uma largura máxima para o contêiner */
+    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+}
+
+/* Estilo para cada cartão */
+.cartao {
+    background-color: #e9f6fd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 320px; /* Tamanho máximo do cartão */
+}
+
+.cartao h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.cartao p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.cartao a {
+    color: #0066cc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cartao a:hover {
+    text-decoration: underline;
+}

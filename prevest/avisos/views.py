@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import CustomUserCreationForm
 from .models import Aviso
@@ -48,3 +48,7 @@ def delete_aviso(request, aviso_id):
     aviso = get_object_or_404(Aviso, id=aviso_id)
     aviso.delete()
     return redirect('avisos')  # Redireciona para a página inicial após a exclusão
+
+def manual_logout(request):
+    logout(request)
+    return redirect('home')  # Redireciona para 'home' após o logout
