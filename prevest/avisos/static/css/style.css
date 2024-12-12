@@ -25,7 +25,8 @@ body, html {
 .nav-links a {
     color: white;
     text-decoration: none;
-    margin-left: 15px;
+    margin-right:10px;
+    margin-left: 10px;
     font-weight: bold;
 }
 
@@ -154,4 +155,62 @@ button:hover, a:hover {
 
 .cartao a:hover {
     text-decoration: underline;
+}
+
+/* Estilo para o campo de título */
+input[name="title"] {
+    width: 90%;  /* Para o campo de título ocupar toda a largura do formulário */
+    padding: 10px;  /* Espaçamento interno para tornar o campo mais confortável */
+    font-size: 16px;  /* Aumenta o tamanho da fonte */
+    border: 1px solid #ccc;  /* Bordas para o campo */
+    border-radius: 5px;  /* Bordas arredondadas */
+}
+
+/* Estilo para o campo de conteúdo (textarea) */
+textarea[name="content"] {
+    width: 90%;  /* Para o textarea ocupar toda a largura do formulário */
+    height: 200px;  /* Aumenta a altura do campo de conteúdo */
+    padding: 10px;  /* Espaçamento interno */
+    font-size: 16px;  /* Aumenta o tamanho da fonte */
+    border: 1px solid #ccc;  /* Bordas para o campo */
+    border-radius: 5px;  /* Bordas arredondadas */
+    resize: vertical;  /* Permite que o usuário ajuste a altura do textarea */
+}
+
+button[type="submit"] {
+    background-color: #002967;  /* Cor de fundo */
+    color: white;               /* Cor do texto */
+    padding: 10px 20px;         /* Espaçamento interno */
+    font-size: 16px;            /* Tamanho da fonte */
+    border: none;               /* Sem borda */
+    border-radius: 5px;         /* Bordas arredondadas */
+    cursor: pointer;           /* Mudança do cursor para indicar interatividade */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+button[type="excluir"] {
+    background-color: #67000e;  /* Cor de fundo */
+    color: white;               /* Cor do texto */
+    padding: 10px 20px;         /* Espaçamento interno */
+    font-size: 16px;            /* Tamanho da fonte */
+    border: none;               /* Sem borda */
+    border-radius: 5px;         /* Bordas arredondadas */
+    cursor: pointer;           /* Mudança do cursor para indicar interatividade */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+button[type="button"] {
+    background-color: #002967;  /* Cor de fundo */
+    color: white;               /* Cor do texto */
+    padding: 10px 20px;         /* Espaçamento interno */
+    font-size: 16px;            /* Tamanho da fonte */
+    border: none;               /* Sem borda */
+    border-radius: 5px;         /* Bordas arredondadas */
+    cursor: pointer;           /* Mudança do cursor para indicar interatividade */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+/* Mudando a cor do botão quando o mouse passa sobre ele */
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Cor mais escura quando o mouse passa */
 }
